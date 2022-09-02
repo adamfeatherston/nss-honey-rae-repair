@@ -1,0 +1,14 @@
+.tickets {
+    display: flex;
+    flex-direction: column;
+}
+
+.ticket {
+    background-color: grey;
+    border: 1px dashed darkgreen;
+    padding: 1rem;
+    margin: 0.8rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: normal;
+    color:rgb(231, 151, 21)
+}

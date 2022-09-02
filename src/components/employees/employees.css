@@ -1,0 +1,25 @@
+.employees {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.employee {
+    background-color: darkgray;
+    border: .2em solid orange;
+    color: black;
+    padding: 0.5rem;
+    margin: 0.5rem
+}
+
+.employee__footer {
+    margin: 1rem 0 0.252rem 0;
+    font-style: italic;
+}
+
+.employee__header {
+    font-size: larger;
+    font-weight: 865;
+    line-height: 2.75rem;
+}
