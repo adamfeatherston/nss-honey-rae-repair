@@ -1,4 +1,3 @@
-import { Link, useNavigate } from "react-router-dom"
 import { CustomerNavBar } from "./CustomerNav"
 import { EmployeeNavBar } from "./EmployeeNav"
 import "./NavBar.css"
