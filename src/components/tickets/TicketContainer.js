@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Ticket } from "./Ticket"
+// import { Ticket } from "./Ticket"
 import { TicketList } from "./TicketList"
 import { TicketSearch } from "./TicketSearch"
 

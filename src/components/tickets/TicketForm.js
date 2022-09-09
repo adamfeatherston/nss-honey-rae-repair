@@ -24,8 +24,7 @@ export const TicketForm = () => {
         // console.log("you clicked the button"); used to test button functionality before saving/sending state.
 
         // TODO: Create the object to be saved to the API
-    //     "id": 3,
-    // "userId": 1,
+       // "userId": 1,
     // "description": "Sunt pariatur et quidem hic voluptatem. Neque aliquam voluptas eos incidunt repellendus. Vero expedita non sit quaerat sit et eum. Quasi dolor voluptatem illum eum qui est expedita sequi accusamus.",
     // "emergency": false,
     // "dateCompleted": ""
