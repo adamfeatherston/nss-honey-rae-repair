@@ -12,3 +12,8 @@
     font-style: normal;
     color:rgb(231, 151, 21)
 }
+
+.ticket__delete {
+    margin-left: auto;
+    background-color: rgb(255, 240, 245);
+}

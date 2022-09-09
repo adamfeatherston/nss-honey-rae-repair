@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { Ticket } from "./Ticket"
 import "./Tickets.css"
 
@@ -26,17 +26,21 @@ export const TicketList = ({ searchTermState }) => {
         [searchTermState]
     )
 
+    const getAllTickets = () => {
+        fetch(`http://localhost:8088/serviceTickets?_embed=employeeTickets`)
+            .then(response => response.json())
+            .then((ticketArray) => {
+                setTickets(ticketArray)
+            })
+    }
+
     useEffect(
         //function useEffect displays state
         () => {
             // console.log("Initial state of tickets", tickets) // View the initial state of tickets
-            fetch(`http://localhost:8088/serviceTickets?_embed=employeeTickets`)
-                .then(response => response.json())
-                .then((ticketArray) => {
-                    setTickets(ticketArray)
-                })
+            getAllTickets()
 
-                fetch(`http://localhost:8088/employees?_expand=user`)
+            fetch(`http://localhost:8088/employees?_expand=user`)
                 .then(response => response.json())
                 .then((employeeArray) => {
                     setEmployees(employeeArray)
@@ -102,7 +106,7 @@ export const TicketList = ({ searchTermState }) => {
                     <button onClick={() => { setEmergency(false) }} >Show All Tickets</button>
                 </>
                 : <>
-                    <button onClick={() => navigate("/ticket/create")}>Create Ticket</button>
+                    <button onClick={() => navigate("/tickets/create")}>Create Ticket</button>
                     <button onClick={() => updateOpenOnly(true)}>Open Tickets</button>
                     <button onClick={() => updateOpenOnly(false)}>All My Tickets</button>
                 </>
@@ -113,7 +117,10 @@ export const TicketList = ({ searchTermState }) => {
         <article className="tickets">
             {
                 filteredTickets.map(
-                    (ticket) => <Ticket employees={employees} isStaff={honeyUserObject.staff} ticketObject={ticket} />
+                    (ticket) => <Ticket employees={employees}
+                     getAllTickets={getAllTickets}
+                     currentUser={honeyUserObject}
+                     ticketObject={ticket} />
                 )
             }
         </article>
